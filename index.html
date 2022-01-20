@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Slepky</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+        <link href="./libs/owl/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="./libs/fancybox/jquery.fancybox.min.css" rel="stylesheet">
+        <link rel="shortcut icon" href="./img/favicon.ico.png" type="image/x-icon">
+        <link rel="stylesheet" href="css/style.min.css">
+        
+    </head>
+    <body>
+        <div class="overlay"></div>
+        <div class="mobile-overlay"></div>
+        <div class="modal-overlay"></div>
+        <!-- header -->
+        <header id="header">
+            <!-- mobile-menu -->
+            <div class="mobile-menu">
+                <div class="header__top-link">
+                    <a href="#order">Стоимость и заказ</a>
+                    <a href="#portfolio">Мои работы</a>
+                    <a href="#contacts">Контакты</a>
+                    <a href="#riviews">Отзывы</a>
+                </div>
+                <div class="social-link">
+                    <a href="https://instagram.com/slepki_mariupol?igshid=1jhj82hsc5m09" target="_blank">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram-square" class="svg-inline--fa fa-instagram-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32ZM382.88,322c-1.29,25.63-7.14,48.34-25.85,67s-41.4,24.63-67,25.85c-26.41,1.49-105.59,1.49-132,0-25.63-1.29-48.26-7.15-67-25.85s-24.63-41.42-25.85-67c-1.49-26.42-1.49-105.61,0-132,1.29-25.63,7.07-48.34,25.85-67s41.47-24.56,67-25.78c26.41-1.49,105.59-1.49,132,0,25.63,1.29,48.33,7.15,67,25.85s24.63,41.42,25.85,67.05C384.37,216.44,384.37,295.56,382.88,322Z"></path></svg>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=<380977996825>" target="_blank">
+                        <svg width="51" height="51" viewBox="0 0 51 51" fill="none" class="whatsapp-icn" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25.791 11.1258C17.6098 11.1258 10.959 17.7191 10.9478 25.8297C10.9478 28.6076 11.7355 31.3186 13.2209 33.6502L13.5698 34.208L12.0731 39.6299L17.6885 38.1685L18.2287 38.492C20.5019 39.8307 23.1127 40.5447 25.7797 40.5447H25.791C33.961 40.5447 40.7918 33.9514 40.7918 25.8409C40.7918 21.9139 39.0813 18.2212 36.2792 15.4433C33.4658 12.6542 29.7522 11.1258 25.791 11.1258ZM34.5124 32.1441C34.141 33.1816 32.363 34.1188 31.5077 34.2415C30.0898 34.4535 28.987 34.3419 26.1623 33.137C21.6947 31.2182 18.7689 26.7557 18.5438 26.4656C18.3187 26.1755 16.7207 24.067 16.7207 21.8916C16.7207 19.7161 17.8686 18.6451 18.285 18.1989C18.6901 17.7526 19.174 17.641 19.4778 17.641C19.7704 17.641 20.0743 17.641 20.3331 17.6522C20.6032 17.6634 20.9745 17.5518 21.3346 18.4108C21.706 19.2922 22.595 21.4676 22.7076 21.6907C22.8201 21.9139 22.8989 22.1705 22.7413 22.4605C21.8861 24.1563 20.9745 24.0893 21.4359 24.8703C23.1577 27.8044 24.8795 28.8196 27.5015 30.1248C27.9516 30.348 28.2105 30.3145 28.4693 30.0133C28.7281 29.7232 29.5834 28.7192 29.876 28.2841C30.1686 27.8378 30.4724 27.9159 30.8775 28.0609C31.2826 28.206 33.4771 29.277 33.9272 29.5001C34.3773 29.7232 34.6699 29.8348 34.7825 30.0133C34.8837 30.2253 34.8837 31.1177 34.5124 32.1441ZM45.597 0.995972H5.98501C3.00285 0.995972 0.583374 3.39456 0.583374 6.35095V45.6208C0.583374 48.5772 3.00285 50.9758 5.98501 50.9758H45.597C48.5791 50.9758 50.9986 48.5772 50.9986 45.6208V6.35095C50.9986 3.39456 48.5791 0.995972 45.597 0.995972ZM25.7797 43.5235C22.7863 43.5235 19.8492 42.776 17.2497 41.3703L7.78555 43.8358L10.3176 34.6654C8.75334 31.9879 7.93184 28.9423 7.93184 25.8185C7.9431 16.068 15.9443 8.13595 25.7797 8.13595C30.5512 8.13595 35.03 9.97672 38.406 13.3236C41.7708 16.6705 43.7964 21.1106 43.7964 25.8409C43.7964 35.5914 35.6152 43.5235 25.7797 43.5235Z" fill="#4F4F4F"/>
+                            </svg>
+                    </a>
+                    <a href="tg://resolve?domain=SLEPKI_MARIUPOL" target="blank">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="telegram-plane" class="svg-inline--fa fa-telegram-plane fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"></path></svg>
+                    </a>
+                    <a href="viber://chat?number=%2B380977996825" target="_blank">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="viber" class="svg-inline--fa fa-viber fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M444 49.9C431.3 38.2 379.9.9 265.3.4c0 0-135.1-8.1-200.9 52.3C27.8 89.3 14.9 143 13.5 209.5c-1.4 66.5-3.1 191.1 117 224.9h.1l-.1 51.6s-.8 20.9 13 25.1c16.6 5.2 26.4-10.7 42.3-27.8 8.7-9.4 20.7-23.2 29.8-33.7 82.2 6.9 145.3-8.9 152.5-11.2 16.6-5.4 110.5-17.4 125.7-142 15.8-128.6-7.6-209.8-49.8-246.5zM457.9 287c-12.9 104-89 110.6-103 115.1-6 1.9-61.5 15.7-131.2 11.2 0 0-52 62.7-68.2 79-5.3 5.3-11.1 4.8-11-5.7 0-6.9.4-85.7.4-85.7-.1 0-.1 0 0 0-101.8-28.2-95.8-134.3-94.7-189.8 1.1-55.5 11.6-101 42.6-131.6 55.7-50.5 170.4-43 170.4-43 96.9.4 143.3 29.6 154.1 39.4 35.7 30.6 53.9 103.8 40.6 211.1zm-139-80.8c.4 8.6-12.5 9.2-12.9.6-1.1-22-11.4-32.7-32.6-33.9-8.6-.5-7.8-13.4.7-12.9 27.9 1.5 43.4 17.5 44.8 46.2zm20.3 11.3c1-42.4-25.5-75.6-75.8-79.3-8.5-.6-7.6-13.5.9-12.9 58 4.2 88.9 44.1 87.8 92.5-.1 8.6-13.1 8.2-12.9-.3zm47 13.4c.1 8.6-12.9 8.7-12.9.1-.6-81.5-54.9-125.9-120.8-126.4-8.5-.1-8.5-12.9 0-12.9 73.7.5 133 51.4 133.7 139.2zM374.9 329v.2c-10.8 19-31 40-51.8 33.3l-.2-.3c-21.1-5.9-70.8-31.5-102.2-56.5-16.2-12.8-31-27.9-42.4-42.4-10.3-12.9-20.7-28.2-30.8-46.6-21.3-38.5-26-55.7-26-55.7-6.7-20.8 14.2-41 33.3-51.8h.2c9.2-4.8 18-3.2 23.9 3.9 0 0 12.4 14.8 17.7 22.1 5 6.8 11.7 17.7 15.2 23.8 6.1 10.9 2.3 22-3.7 26.6l-12 9.6c-6.1 4.9-5.3 14-5.3 14s17.8 67.3 84.3 84.3c0 0 9.1.8 14-5.3l9.6-12c4.6-6 15.7-9.8 26.6-3.7 14.7 8.3 33.4 21.2 45.8 32.9 7 5.7 8.6 14.4 3.8 23.6z"></path></svg>
+                    </a>
+                </div>
+            </div>
+            <!-- //mobile-menu -->
+            <div class="header__top">
+                <div class="container">
+                    <div class="toggle-menu"><span></span></div>  
+                    <div class="header__top-link-wrapper">
+                        <div class="header__top-link">
+                            <a href="#order">Стоимость и заказ</a>
+                            <a href="#portfolio">Мои работы</a>
+                            <a href="#contacts">Контакты</a>
+                            <a href="#riviews">Отзывы</a>
+                        </div>
+                        <div class="social-link">
+                            <a href="https://instagram.com/slepki_mariupol?igshid=1jhj82hsc5m09" target="_blank">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram-square" class="svg-inline--fa fa-instagram-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32ZM382.88,322c-1.29,25.63-7.14,48.34-25.85,67s-41.4,24.63-67,25.85c-26.41,1.49-105.59,1.49-132,0-25.63-1.29-48.26-7.15-67-25.85s-24.63-41.42-25.85-67c-1.49-26.42-1.49-105.61,0-132,1.29-25.63,7.07-48.34,25.85-67s41.47-24.56,67-25.78c26.41-1.49,105.59-1.49,132,0,25.63,1.29,48.33,7.15,67,25.85s24.63,41.42,25.85,67.05C384.37,216.44,384.37,295.56,382.88,322Z"></path></svg>
+                            </a>
+                            <a href="https://api.whatsapp.com/send?phone=<380977996825>" target="_blank">
+                                <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M25.791 11.1258C17.6098 11.1258 10.959 17.7191 10.9478 25.8297C10.9478 28.6076 11.7355 31.3186 13.2209 33.6502L13.5698 34.208L12.0731 39.6299L17.6885 38.1685L18.2287 38.492C20.5019 39.8307 23.1127 40.5447 25.7797 40.5447H25.791C33.961 40.5447 40.7918 33.9514 40.7918 25.8409C40.7918 21.9139 39.0813 18.2212 36.2792 15.4433C33.4658 12.6542 29.7522 11.1258 25.791 11.1258ZM34.5124 32.1441C34.141 33.1816 32.363 34.1188 31.5077 34.2415C30.0898 34.4535 28.987 34.3419 26.1623 33.137C21.6947 31.2182 18.7689 26.7557 18.5438 26.4656C18.3187 26.1755 16.7207 24.067 16.7207 21.8916C16.7207 19.7161 17.8686 18.6451 18.285 18.1989C18.6901 17.7526 19.174 17.641 19.4778 17.641C19.7704 17.641 20.0743 17.641 20.3331 17.6522C20.6032 17.6634 20.9745 17.5518 21.3346 18.4108C21.706 19.2922 22.595 21.4676 22.7076 21.6907C22.8201 21.9139 22.8989 22.1705 22.7413 22.4605C21.8861 24.1563 20.9745 24.0893 21.4359 24.8703C23.1577 27.8044 24.8795 28.8196 27.5015 30.1248C27.9516 30.348 28.2105 30.3145 28.4693 30.0133C28.7281 29.7232 29.5834 28.7192 29.876 28.2841C30.1686 27.8378 30.4724 27.9159 30.8775 28.0609C31.2826 28.206 33.4771 29.277 33.9272 29.5001C34.3773 29.7232 34.6699 29.8348 34.7825 30.0133C34.8837 30.2253 34.8837 31.1177 34.5124 32.1441ZM45.597 0.995972H5.98501C3.00285 0.995972 0.583374 3.39456 0.583374 6.35095V45.6208C0.583374 48.5772 3.00285 50.9758 5.98501 50.9758H45.597C48.5791 50.9758 50.9986 48.5772 50.9986 45.6208V6.35095C50.9986 3.39456 48.5791 0.995972 45.597 0.995972ZM25.7797 43.5235C22.7863 43.5235 19.8492 42.776 17.2497 41.3703L7.78555 43.8358L10.3176 34.6654C8.75334 31.9879 7.93184 28.9423 7.93184 25.8185C7.9431 16.068 15.9443 8.13595 25.7797 8.13595C30.5512 8.13595 35.03 9.97672 38.406 13.3236C41.7708 16.6705 43.7964 21.1106 43.7964 25.8409C43.7964 35.5914 35.6152 43.5235 25.7797 43.5235Z" fill="#4F4F4F"/>
+                                    </svg>
+                            </a>
+                            <a href="tg://resolve?domain=SLEPKI_MARIUPOL" target="blank">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="telegram-plane" class="svg-inline--fa fa-telegram-plane fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"></path></svg>
+                            </>
+                            <a href="viber://chat?number=%2B380977996825" target="_blank">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="viber" class="svg-inline--fa fa-viber fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M444 49.9C431.3 38.2 379.9.9 265.3.4c0 0-135.1-8.1-200.9 52.3C27.8 89.3 14.9 143 13.5 209.5c-1.4 66.5-3.1 191.1 117 224.9h.1l-.1 51.6s-.8 20.9 13 25.1c16.6 5.2 26.4-10.7 42.3-27.8 8.7-9.4 20.7-23.2 29.8-33.7 82.2 6.9 145.3-8.9 152.5-11.2 16.6-5.4 110.5-17.4 125.7-142 15.8-128.6-7.6-209.8-49.8-246.5zM457.9 287c-12.9 104-89 110.6-103 115.1-6 1.9-61.5 15.7-131.2 11.2 0 0-52 62.7-68.2 79-5.3 5.3-11.1 4.8-11-5.7 0-6.9.4-85.7.4-85.7-.1 0-.1 0 0 0-101.8-28.2-95.8-134.3-94.7-189.8 1.1-55.5 11.6-101 42.6-131.6 55.7-50.5 170.4-43 170.4-43 96.9.4 143.3 29.6 154.1 39.4 35.7 30.6 53.9 103.8 40.6 211.1zm-139-80.8c.4 8.6-12.5 9.2-12.9.6-1.1-22-11.4-32.7-32.6-33.9-8.6-.5-7.8-13.4.7-12.9 27.9 1.5 43.4 17.5 44.8 46.2zm20.3 11.3c1-42.4-25.5-75.6-75.8-79.3-8.5-.6-7.6-13.5.9-12.9 58 4.2 88.9 44.1 87.8 92.5-.1 8.6-13.1 8.2-12.9-.3zm47 13.4c.1 8.6-12.9 8.7-12.9.1-.6-81.5-54.9-125.9-120.8-126.4-8.5-.1-8.5-12.9 0-12.9 73.7.5 133 51.4 133.7 139.2zM374.9 329v.2c-10.8 19-31 40-51.8 33.3l-.2-.3c-21.1-5.9-70.8-31.5-102.2-56.5-16.2-12.8-31-27.9-42.4-42.4-10.3-12.9-20.7-28.2-30.8-46.6-21.3-38.5-26-55.7-26-55.7-6.7-20.8 14.2-41 33.3-51.8h.2c9.2-4.8 18-3.2 23.9 3.9 0 0 12.4 14.8 17.7 22.1 5 6.8 11.7 17.7 15.2 23.8 6.1 10.9 2.3 22-3.7 26.6l-12 9.6c-6.1 4.9-5.3 14-5.3 14s17.8 67.3 84.3 84.3c0 0 9.1.8 14-5.3l9.6-12c4.6-6 15.7-9.8 26.6-3.7 14.7 8.3 33.4 21.2 45.8 32.9 7 5.7 8.6 14.4 3.8 23.6z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__center">
+                <div class="header__center-wrapper">
+                    <div class="header__center-text">
+                        <h1>
+                            Начни зарабатывать на слепках
+                            и стань уникальным в своем городе
+                        </h1>
+                    </div>
+                    <a href="#!" class="logo">
+                        <img src="./img/img-header/logo.png" alt="Логотип">
+                    </a>
+                </div>
+            </div>
+            <div class="header__bottom">
+                <div class="container">
+                    <div class="header__bottom-text">
+                        Студия слепков Катерины Жук
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- //header -->
+        <!--main-->
+        <main>
+            <!-- about -->
+            <div class="about">
+                <div class="about__img">
+                    <img src="./img/nescafe.png" alt="">
+                </div>
+                <div class="player-wrapper">
+                    <iframe src="https://www.youtube.com/embed/Hv5yELeyCkg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <!-- //about -->
+            <!-- skills -->
+            <div class="skills">
+                <div class="container">
+                    <div class="skills__title">
+                        Что ты научишься делать?
+                    </div>
+                    <div class="player-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/PvDcE3fwdQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="skills-modal__container">
+                        <a href="#!" class="btn btn--animate btn-js">ПРОКОНСУЛЬТИРОВАТЬСЯ
+                        </a>
+                        <div class="skills-modal popup-js">
+                            <div class="btn-back"></div>
+                            <div class="skills-modal__title">
+                                <h2>Выберите удобный для вас мессенджер</h2>
+                            </div>
+                            <div class="skills-modal__social">
+                                <div class="skills-modal__social-link">
+                                    <a href="https://api.whatsapp.com/send?phone=380977996825&text= Здравствуйте!%20Хочу%20подробнее%20узнать%20об%20обучении." target="_blank">
+                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="whatsapp" class="svg-inline--fa fa-whatsapp fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>
+                                    </a>
+                                    <a href="tg://resolve?domain=SLEPKI_MARIUPOL" target="blank">
+                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="telegram-plane" class="svg-inline--fa fa-telegram-plane fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"></path></svg>
+                                    </a>
+                                    <a href="viber://chat?number=%2B380977996825" target="_blank">
+                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="viber" class="svg-inline--fa fa-viber fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M444 49.9C431.3 38.2 379.9.9 265.3.4c0 0-135.1-8.1-200.9 52.3C27.8 89.3 14.9 143 13.5 209.5c-1.4 66.5-3.1 191.1 117 224.9h.1l-.1 51.6s-.8 20.9 13 25.1c16.6 5.2 26.4-10.7 42.3-27.8 8.7-9.4 20.7-23.2 29.8-33.7 82.2 6.9 145.3-8.9 152.5-11.2 16.6-5.4 110.5-17.4 125.7-142 15.8-128.6-7.6-209.8-49.8-246.5zM457.9 287c-12.9 104-89 110.6-103 115.1-6 1.9-61.5 15.7-131.2 11.2 0 0-52 62.7-68.2 79-5.3 5.3-11.1 4.8-11-5.7 0-6.9.4-85.7.4-85.7-.1 0-.1 0 0 0-101.8-28.2-95.8-134.3-94.7-189.8 1.1-55.5 11.6-101 42.6-131.6 55.7-50.5 170.4-43 170.4-43 96.9.4 143.3 29.6 154.1 39.4 35.7 30.6 53.9 103.8 40.6 211.1zm-139-80.8c.4 8.6-12.5 9.2-12.9.6-1.1-22-11.4-32.7-32.6-33.9-8.6-.5-7.8-13.4.7-12.9 27.9 1.5 43.4 17.5 44.8 46.2zm20.3 11.3c1-42.4-25.5-75.6-75.8-79.3-8.5-.6-7.6-13.5.9-12.9 58 4.2 88.9 44.1 87.8 92.5-.1 8.6-13.1 8.2-12.9-.3zm47 13.4c.1 8.6-12.9 8.7-12.9.1-.6-81.5-54.9-125.9-120.8-126.4-8.5-.1-8.5-12.9 0-12.9 73.7.5 133 51.4 133.7 139.2zM374.9 329v.2c-10.8 19-31 40-51.8 33.3l-.2-.3c-21.1-5.9-70.8-31.5-102.2-56.5-16.2-12.8-31-27.9-42.4-42.4-10.3-12.9-20.7-28.2-30.8-46.6-21.3-38.5-26-55.7-26-55.7-6.7-20.8 14.2-41 33.3-51.8h.2c9.2-4.8 18-3.2 23.9 3.9 0 0 12.4 14.8 17.7 22.1 5 6.8 11.7 17.7 15.2 23.8 6.1 10.9 2.3 22-3.7 26.6l-12 9.6c-6.1 4.9-5.3 14-5.3 14s17.8 67.3 84.3 84.3c0 0 9.1.8 14-5.3l9.6-12c4.6-6 15.7-9.8 26.6-3.7 14.7 8.3 33.4 21.2 45.8 32.9 7 5.7 8.6 14.4 3.8 23.6z"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <!-- //skills -->
+            <!-- advantages -->
+            <div class="advantages">
+                <div class="container">
+                    <div class="advantages__title">
+                        <h2>
+                            Что тебе даст эта деятельность?
+                        </h2>
+                    </div>
+                    <div class="advantages__subtitle">
+                        <h3>
+                            Что вы получите, работая <span>МАСТЕРОМ СКУЛЬПТУРНЫХ КОПИЙ</span>??
+    
+                        </h3>
+                    </div>
+                    <div class="advantages__list">
+                        <div class="advantages__toggle-wrapper">
+                            <a class="advantages__toggle" href="#liberty">СВОБОДА</a>
+                            <a class="advantages__toggle" href="#independence">НЕЗАВИСИМОСТЬ</a>
+                            <a class="advantages__toggle" href="#significance">ЗНАЧИМОСТЬ</a>
+                            <a class="advantages__toggle active-toggle" href="#earnings">ЗАРАБОТОК</a>
+                            
+                        </div>
+                        <div class="advantages__list-text-wrapper">
+                            <div class="advantages__list-text" id="liberty">
+                                <p>
+                                    Наконец начнёте работать на себя, планируя свой день именно так, как хотите вы! Успевая быть рядом с близкими людьми. Особенно, это важно для молодой мамы, которая хочет быть с ребёнком, но при этом зарабатывать!
+                                </p>
+                            </div>
+                            <div class="advantages__list-text" id="independence">
+                                <p>
+                                    Больше не придётся бояться, что вам нужно просить у кого-то деньги, будь то муж или просто близкий родственник. Или же жить только на декретные, если вы мама.
+                                </p>
+                            </div>
+                            <div class="advantages__list-text" id="significance">
+                                <p>
+                                    В Жизни. Наконец вы обретёте дело, которым можно заниматься в свое удовольствие! Появится цель. Много целей. Которые будут вести вас только вперед
+                                </p>
+                            </div>
+                            <div class="advantages__list-text" id="earnings">
+                                <p>
+                                    Тот заработок, который даст вам все выше перечисленные блага.
+                                </p>
+                                <p>
+                                    Зарабатывать на слепках можно много! Только на одной семейной картине вы сможете заработать чистыми от 1тыс грн ( +- 3 тыс рублей) до 3 тыс грн ( 6 тыс руб). А подобных работ в месяц у вас может быть много! 
+                                </p>
+                                <p>
+                                    На простых слепках в коробочке вы также сможете иметь хороший доход. Осталось лишь посчитать, сколько клиентов в месяц вам необходимо для того, чтобы заработать желаемую сумму. Иногда это может быть всего лишь 5-10 клиентов! Не нужен поток!! 
+                                </p>
+                                <p>
+                                    А дальше все зависит только от вас! 
+                                    Я не буду кормить вас розовой таблеткой, рассказывая, что вы станете миллионером. Нет! Я хочу дать понять, что зарабатывать можно много, но все зависит только от вас самих. И поверьте, большинство работают в данной сфере, не имея второй работы. Они сделали свой слепочный бизнес основным доходом, как сделала это я. 
+                                </p>
+                                <p>
+                                    Поэтому, присоединяйся к нам. И поменяй свою жизнь в лучшую сторону
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- //advantages -->
+            <div class="wabinar">
+                <div class="container">
+                        <div class="wabinar__title">
+                            Как зарабатывать на слепках? Подробно раскрываю секреты бизнеса
+                        </div>
+                        <div class="player-wrapper">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/tuhxmT4g4U8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                </div>
+            </div>
+            <!-- riviews -->
+            <div class="riviews" id="riviews">
+                <div class="container">
+                    <!-- section-carousel -->
+                    <div class="section-carousel">
+                        <div class="riviews__title">
+                            <h2>ОТЗЫВЫ</h2>
+                        </div>
+                        <div class="riviews__subtitle">
+                            <h3>
+                                КЛИЕНТЫ
+                            </h3>
+                        </div>
+                        <div class="owl-carousel time">
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-18-33.jpg" alt="riviews">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-18-28.jpg" alt="riviews">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-18-26.jpg" alt="riviews">
+                            </div>
+
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-18-22.jpg" alt="riviews">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-18-20.jpg" alt="riviews">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-18-17.jpg" alt="riviews">
+                            </div>
+
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-18-14.jpg" alt="riviews">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-18-12.jpg" alt="riviews">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-18-09.jpg" alt="riviews">
+                            </div>
+
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-18-07.jpg" alt="riviews">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-18-03.jpg" alt="riviews">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-18-00.jpg" alt="riviews">
+                            </div>
+
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-17-58.jpg" alt="riviews">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-17-53.jpg" alt="riviews">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-17-49.jpg" alt="riviews">
+                            </div>
+
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-17-45.jpg" alt="riviews">
+                            </div>
+                        
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-17-41.jpg" alt="riviews">
+                            </div>
+
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-17-38.jpg" alt="riviews">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-17-33.jpg" alt="riviews">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-17-31.jpg" alt="riviews">
+                            </div>
+
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-17-27.jpg" alt="riviews">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-17-23.jpg" alt="rivievs">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-17-19.jpg" alt="rivievs">
+                            </div>
+
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-17-15.jpg" alt="rivievs">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-17-11.jpg" alt="rivievs">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-17-06.jpg" alt="rivievs">
+                            </div>
+
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-16-58.jpg" alt="rivievs">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-16-54.jpg" alt="rivievs">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-16-49.jpg" alt="rivievs">
+                            </div>
+
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-16-44.jpg" alt="rivievs">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-16-40.jpg" alt="rivievs">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-16-35.jpg" alt="rivievs">
+                            </div>
+
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-16-26.jpg" alt="riviews">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-16-23.jpg" alt="riviews">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-16-16.jpg" alt="riviews">
+                            </div>
+
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-16-13.jpg" alt="riviews">
+                            </div>
+                            <div class="slider">
+                                <img src="./img/img-reviews/photo_2021-04-02_12-16-07.jpg" alt="riviews">
+                            </div>
+                        </div>
+                    </div>
+                    <!--// section-carousel -->
+                    <!-- riviews__musters -->
+                    <div class="riviews__musters">
+                        <div class="riviews__subtitle">
+                            <h3>
+                                МАСТЕРА
+                            </h3>
+                        </div>
+                        <div class="riviews__musters-block-wrapper">
+                            <div class="riviews__musters-block-row">
+
+                                <div class="riviews__musters-block">
+                                    <div class="riviews__musters-video first-video">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/FxpP8Le09IQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <div class="riviews__musters-block block-hide">
+                                    <div class="riviews__musters-video second-video">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZUqLc18hsxU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="riviews__musters-small-block">
+                                        <div class="riviews__musters-video">
+                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/TeDfknq6Vrs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                        <div class="riviews__musters-video">
+                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/TtQxG_GA67A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#!" class="all-video first link">Смотреть все видео</a>
+                            </div>         
+                        </div>    
+                    </div>
+                    <!-- //riviews__musters -->
+                    </div>
+            </div>
+            <!-- //riviews -->
+            <div class="portfolio" id="portfolio">
+                <div class="container">
+                    <div class="portfolio__title">
+                        <h2>Мои работы</h2>
+                    </div>
+                    <!-- portfolio__block-cards -->
+                    <div class="portfolio__block-cards">
+                        <div class="portfolio__card-wrapper">
+                            <div class="portfolio__card">
+                                <a class="button" data-fancybox="gallery" href="./img/img-portfolio/big-1.jpg"></a>
+                                <img src="./img/img-portfolio/big-1.jpg" alt="изображение слепки детских ручек и ножек">
+                            </div>
+                            <div class="portfolio__card">
+                                <a class="button" data-fancybox="gallery" href="./img/img-portfolio/big-2.jpg"></a>
+                                <img src="./img/img-portfolio/big-2.jpg" alt="изображение слепки детских ручек и ножек">
+                            </div>
+                            <div class="portfolio__card">
+                                <a class="button" data-fancybox="gallery" href="./img/img-portfolio/big-3.jpg"></a>
+                                <img src="./img/img-portfolio/big-3.jpg" alt="изображение слепки детских ручек и ножек">
+                            </div>
+                            <div class="portfolio__card">
+                                <a class="button" data-fancybox="gallery" href="./img/img-portfolio/big-4.jpg"></a>
+                                <img src="./img/img-portfolio/big-4.jpg" alt="изображение слепки детских ручек и ножек">
+                            </div>
+                        </div>
+                        <div class="portfolio__card-wrapper card-hide">
+                            <div class="portfolio__card">
+                                <a class="button" data-fancybox="gallery" href="./img/img-portfolio/big-5.jpg"></a>
+                                <img src="./img/img-portfolio/big-5.jpg" alt="изображение слепки детских ручек и ножек">
+                            </div>
+                            <div class="portfolio__card">
+                                <a class="button" data-fancybox="gallery" href="./img/img-portfolio/big-6.jpg"></a>
+                                <img src="./img/img-portfolio/big-6.jpg" alt="изображение слепки детских ручек и ножек">                             
+                            </div>
+                            <div class="portfolio__card">
+                                <a class="button" data-fancybox="gallery" href="./img/img-portfolio/big-7.jpg"></a>
+                                <img src="./img/img-portfolio/big-7.jpg" alt="изображение слепки детских ручек и ножек">                                
+                            </div>
+                            <div class="portfolio__card">
+                                <a class="button" data-fancybox="gallery" href="./img/img-portfolio/big-8.jpg"></a>
+                                <img src="./img/img-portfolio/big-8.jpg" alt="изображение слепки детских ручек и ножек">                              
+                            </div>
+                        </div>  
+                        <a href="#!" class="all-projects first link">Смотреть все работы</a>
+                    </div>
+                    <!-- //portfolio__block-cards -->
+                </div>
+            </div>
+            <!-- courses -->
+            <div class="courses" id="order">
+                <div class="container">
+                    <div class="courses__wrapper">
+                        <div class="courses__title">
+                            <h2>Обучение включает в себя:</h2>️
+                        </div>
+                        <div class="course__subtitle">
+                            <h5>
+                                В вашем распоряжении видео уроки с  озвучкой:
+                                от снятия правильной техники слепков, покраски, реставрации до самого оформления их в  рамочки. Всё секреты и фишки.
+                            </h5>
+                        </div>
+                        <div class="courses__block-toggle">
+                            <a class="courses__toggle active-toggle" href="#3d-2d">3D + 2D формат</a>
+                            <a class="courses__toggle" href="#2d">2D формат</a>
+                            <a class="courses__toggle" href="#3d">3D формат</a>
+                        </div>
+                        
+                        <!-- courses__block-3D+2d -->
+                        <div class="courses__block first" id="3d-2d">
+                            <div class="courses__block-title">
+                                <h3>
+                                    19 видео уроков, отдельный файл с материалами + КУРС ПО ТАРГЕТУ И ПРОДВИЖЕНИЮ В Подарок в пакете
+                                    "3D  + 2D формат слепков":
+                                </h3>
+                            </div>
+                            <!-- courses__block-3D+2dlist -->
+                            <div class="courses__block-list">
+                                <ul>
+                                    <li>
+                                        видеоурок ввод в курс. 
+                                        Приветствие в мир слепков. 
+                                        Тонкости и нюансы профессии.
+                                    </li>
+                                    <li>
+                                        путеводитель по материалам
+                                    </li>
+                                    <li>
+                                        процесс снятия слепков
+                                    </li>
+                                    <li>
+                                        заливка слепков и извлечение
+                                    </li>
+                                    <li>
+                                        первичная и вторичная обработки
+                                    </li>
+                                    <li>
+                                        реставрация
+                                    </li>
+                                    <li>
+                                        тонкости покраски
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        тонкости и нюансы оформления слепков
+                                    </li>
+                                    <li>
+                                        отдельный блок снятия слепков взрослым
+                                    </li>
+                                    <li>
+                                        покраска и крепление взрослых слепков и скульптур
+                                    </li>
+                                    <li>
+                                        ценообразование ( какие ставить цены на свои работы
+                                    </li>
+                                    <li>
+                                        домашние задания
+                                    </li>
+                                    <li>
+                                        поддержка от вашего преподавателя 24/7
+                                    </li>
+                                    <li>
+                                        + Бонусный видеоурок по созданию авторских подставок для скульптур/свеч/украшений
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- //courses__block-3D+2d-list -->
+                            <div class="courses__block-price">
+                                <div class="block-price__text">
+                                    CТОИМОСТЬ КУРСА СЕЙЧАС:
+                                </div>
+                    
+                                <div class="green-btn">
+                                    <div class="block-price__row">                                   
+                                        <div>7’000грн</div>
+                                        <div>~18’500 руб</div>
+                                    </div>
+                                    <img src="./img/green-btn.png" alt="кнопка с ценой">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //courses__block-3D+2d -->
+    
+                        <!-- courses__block-2d -->
+                        <div class="courses__block" id="2d">
+                            <div class="courses__block-title">
+                                <h3>
+                                    9 видео уроков + отдельный файл в пакете
+                                    "2D формат слепков" :
+                                   
+                                </h3>
+                            </div>
+                            <!-- courses__block-2dlist -->
+                            <div class="courses__block-list">
+                                <ul>
+                                    <li>
+                                        видеоурок ввод в курс. Приветствие в мир слепков. 
+                                        Тонкости и нюансы профессии.
+                                        
+                                    </li>
+                                    <li>
+                                        путеводитель по материалам
+                                    </li>
+                                    <li>
+                                        процесс снятия слепков
+                                    </li>
+                                    <li>
+                                        заливка слепков и извлечение
+                                    </li>
+                                    <li>
+                                        первичная и вторичная обработки
+                                    </li>
+                                    <li>
+                                        реставрация
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        тонкости покраски
+                                    </li>
+                                    <li>
+                                        тонкости и нюансы оформления слепков
+                                    </li>
+                                    <li>
+                                        домашние задания
+    
+                                    </li>
+                                    <li>
+                                        ценообразование ( какие ставить цены на свои работы)
+    
+                                    </li>
+    
+                                    <li>
+                                        поддержка от вашего преподавателя 24/7
+                                    </li>
+                                    <li>
+                                        + Бонусный видеоурок по созданию авторских подставок для скульптур/свеч/украшений
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- //courses__block-2d-list -->
+                            <div class="courses__block-price">
+                                <div class="block-price__text">
+                                    CТОИМОСТЬ КУРСА СЕЙЧАС:
+                                </div>
+
+                                <div class="green-btn">
+                                    <div class="block-price__row">
+                                        <div>4’000грн</div>
+                                        <div>~10’600 руб</div>
+                                    </div>
+                                    <img src="./img/green-btn.png" alt="кнопка с ценой">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //courses__block-2d -->
+    
+                        <!-- courses__block-3D -->
+                        <div class="courses__block" id="3d">
+                            <div class="courses__block-title">
+                                <h3>
+                                    11 видео уроков + отдельный файл в пакете 
+                                    "3D формат слепков" :
+                                </h3>
+                            </div>
+                            <!-- courses__block-3Dlist -->
+                            <div class="courses__block-list">
+                                <ul>
+                                    <li>
+                                        видеоурок ввод в курс. 
+                                        Приветствие в мир слепков. 
+                                        Тонкости и нюансы профессии.
+                                    </li>
+                                    <li>
+                                        путеводитель по материалам
+                                    </li>
+                                    <li>
+                                        процесс снятия слепков
+                                    </li>
+                                    <li>
+                                        заливка слепков и извлечение
+                                    </li>
+                                    <li>
+                                        первичная и вторичная обработки
+                                    </li>
+                                    <li>
+                                        реставрация
+                                    </li>
+                                    <li>
+                                        тонкости покраски
+                                    </li>                                   
+                                </ul>
+                                <ul>                                    
+                                    <li>
+                                        тонкости и нюансы оформления слепков
+                                    </li>
+                                    <li>
+                                        отдельный блок снятия слепков взрослым
+                                    </li>
+                                    <li>
+                                        покраска и крепление взрослых слепков и скульптур
+                                    </li>
+                                    <li>
+                                        ценообразование ( какие ставить цены на свои работы
+                                    </li>
+                                    <li>
+                                        домашние задания
+                                    </li>
+                                    <li>
+                                        поддержка от вашего преподавателя 24/7
+                                    </li>
+                                    <li>
+                                        + Бонусный видеоурок по созданию авторских подставок для скульптур/свеч/украшений
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- //courses__block-3Dlist -->
+                            <div class="courses__block-price">
+                                <div class="block-price__text">
+                                    CТОИМОСТЬ КУРСА СЕЙЧАС:
+                                </div>
+                                <div class="green-btn">
+                                    <div class="block-price__row">
+                                        <div>5’000грн</div>
+                                        <div>~13’200 руб</div>
+                                    </div>
+                                    <img src="./img/green-btn.png" alt="кнопка с ценой">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //courses__block-3D -->
+                        <div class="courses__infarmation">
+                            <p>
+                                Мой курс по таргету приобретают уже действующие мастера по слепкам. Но для моих учениц в пакете "2D+3D" он идёт бесплатно.
+                            </p>
+                            <p>
+                                Во все категории обучения входит в стоимость ПОСТОЯННАЯ поддержка онлайн. То есть, всегда можно задать любые вопросы, касаемо курса и возникающих вопросов во время ваших творческих начал!  
+                            </p>
+                            <p>
+                                По окончанию курса вы получаете сертификат с подписью. Но только после всех выполненных
+                                домашних заданий!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="courses-modal__container">
+                        <a href="#!" class="btn btn--animate courses-btn-js">ЗАПИСАТЬСЯ НА ОБУЧЕНИЕ
+                        </a>
+                        <div class="courses-modal popup-js-modal">
+                            <div class="btn-back"></div>
+                            <div class="courses-modal__title">
+                                <h2>Выберите удобный для вас мессенджер</h2>
+                            </div>
+                            <div class="courses-modal__social">
+                                <div class="courses-modal__social-link">
+                                    <a href="https://api.whatsapp.com/send?phone=380977996825&text= Здравствуйте!%20Хочу%20подробнее%20узнать%20об%20обучении." target="_blank">
+                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="whatsapp" class="svg-inline--fa fa-whatsapp fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>
+                                    </a>
+                                    <a href="tg://resolve?domain=SLEPKI_MARIUPOL" target="blank">
+                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="telegram-plane" class="svg-inline--fa fa-telegram-plane fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"></path></svg>
+                                    </a>
+                                    <a href="viber://chat?number=%2B380977996825" target="_blank">
+                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="viber" class="svg-inline--fa fa-viber fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M444 49.9C431.3 38.2 379.9.9 265.3.4c0 0-135.1-8.1-200.9 52.3C27.8 89.3 14.9 143 13.5 209.5c-1.4 66.5-3.1 191.1 117 224.9h.1l-.1 51.6s-.8 20.9 13 25.1c16.6 5.2 26.4-10.7 42.3-27.8 8.7-9.4 20.7-23.2 29.8-33.7 82.2 6.9 145.3-8.9 152.5-11.2 16.6-5.4 110.5-17.4 125.7-142 15.8-128.6-7.6-209.8-49.8-246.5zM457.9 287c-12.9 104-89 110.6-103 115.1-6 1.9-61.5 15.7-131.2 11.2 0 0-52 62.7-68.2 79-5.3 5.3-11.1 4.8-11-5.7 0-6.9.4-85.7.4-85.7-.1 0-.1 0 0 0-101.8-28.2-95.8-134.3-94.7-189.8 1.1-55.5 11.6-101 42.6-131.6 55.7-50.5 170.4-43 170.4-43 96.9.4 143.3 29.6 154.1 39.4 35.7 30.6 53.9 103.8 40.6 211.1zm-139-80.8c.4 8.6-12.5 9.2-12.9.6-1.1-22-11.4-32.7-32.6-33.9-8.6-.5-7.8-13.4.7-12.9 27.9 1.5 43.4 17.5 44.8 46.2zm20.3 11.3c1-42.4-25.5-75.6-75.8-79.3-8.5-.6-7.6-13.5.9-12.9 58 4.2 88.9 44.1 87.8 92.5-.1 8.6-13.1 8.2-12.9-.3zm47 13.4c.1 8.6-12.9 8.7-12.9.1-.6-81.5-54.9-125.9-120.8-126.4-8.5-.1-8.5-12.9 0-12.9 73.7.5 133 51.4 133.7 139.2zM374.9 329v.2c-10.8 19-31 40-51.8 33.3l-.2-.3c-21.1-5.9-70.8-31.5-102.2-56.5-16.2-12.8-31-27.9-42.4-42.4-10.3-12.9-20.7-28.2-30.8-46.6-21.3-38.5-26-55.7-26-55.7-6.7-20.8 14.2-41 33.3-51.8h.2c9.2-4.8 18-3.2 23.9 3.9 0 0 12.4 14.8 17.7 22.1 5 6.8 11.7 17.7 15.2 23.8 6.1 10.9 2.3 22-3.7 26.6l-12 9.6c-6.1 4.9-5.3 14-5.3 14s17.8 67.3 84.3 84.3c0 0 9.1.8 14-5.3l9.6-12c4.6-6 15.7-9.8 26.6-3.7 14.7 8.3 33.4 21.2 45.8 32.9 7 5.7 8.6 14.4 3.8 23.6z"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>                
+            </div>
+            <!-- /courses -->
+            <!-- questions -->
+            <div class="questions">
+                <div class="container">
+                    <!-- questions__wrapper -->
+                    <div class="questions__wrapper">
+                        <div class="questions__title">
+                            <h2>Частые вопросы</h2>     
+                        </div>
+                        <!-- questions__block -->
+                        <div class="questions__block">
+                            <a class="questions__text" href="#!">
+                                <p>
+                                    А у меня вообще получится освоить такую профессию?
+                                </p>
+                            </a>
+                
+                            <div class="answer-text">
+                                <p>
+                                Естественно! Уже после первых видеоуроков вы начнете создавать слепки. В моем курсе техника описана настолько точно, что у вас просто нет шансов на поражение. Тем более, с вами я и моя поддержка онлайн.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- //questions__block -->
+
+                        <!-- questions__block -->
+                        <div class="questions__block">
+                            <a  class="questions__text" href="#!">
+                                <p>
+                                    Сколько денег мне нужно вложить в данный бизнес?
+                                </p>
+                            </a>
+                            <div class="answer-text">
+                                <p>
+                                    Копейки! Данный бизнес не требует больших вложений. На первых этапах достаточно закупить немного  материалов и инструментов. А это +- 700-800 грн (1800-1900 руб). При том, что приобретенными материалами вы будете пользоваться долгое время
+                                </p>
+                            </div>
+                        </div>
+                        <!-- //questions__block -->
+
+                        <!-- questions__block -->
+                        <div class="questions__block">
+                            <a class="questions__text" href="#!">
+                                <p>
+                                    Когда я начну зарабатывать?
+                                </p>
+                            </a>
+                            <div class="answer-text">
+                                <p>
+                                    Конечно же,  это зависит только от вас! Вы сможете продать первые слепки уже сразу, после первой практики.  А это примерно через 3-5 дней. Осталось только найти желающих приобрести вашу работу. А в этом вам поможет мой курс по таргету и ваше собственное желание и стремление к успеху.
+
+                                    Насколько востребована деятельность мастера скульптурных копий?
+
+                                    На все 100%! И это не громкие слова! У нас есть МИНИМУМ 2 направления: детские и взрослые слепки. И я сделаю акцент только на одном сегменте. Дети рождаются каждый день, каждую минуту! И каждый день деток рождается достаточно много.  Как думаете, хватит ли вам клиентов?:))) А сколько людей, которые мечтают о красивой скульптуре своих рук? Не говоря о мелких эксклюзивных украшениях, такие как слепки губ или больших семейных картин, которые с годами имеют всё большую ценность
+                                </p>
+                            </div>
+                        </div>
+                        <!-- //questions__block -->
+                    </div>
+                    <!-- //questions__wrapper -->
+                </div>
+            </div>
+            <!-- //questions -->
+            <!-- contacts -->
+            <div class="contacts" id="contacts">
+                <div class="container">
+                    <div class="contacts__title">
+                        <h2>
+                            Контакты
+                        </h2>
+                    </div> 
+                    <div class="contacts__messengers">
+                        <div class="contacts__subtitle">
+                            <h3>
+                                Пишите в мессенджер
+                            </h3>
+                        </div>
+                            <div class="contacts__icn-row">
+                                <a href="tg://resolve?domain=SLEPKI_MARIUPOL" target="_blank" class="contacts__icn">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="telegram-plane" class="svg-inline--fa fa-telegram-plane fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"></path>
+                                    </svg>
+                                </a>
+                                
+                                <a href="viber://chat?number=%2B380977996825" target="_blank" class="contacts__icn">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="viber" class="svg-inline--fa fa-viber fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M444 49.9C431.3 38.2 379.9.9 265.3.4c0 0-135.1-8.1-200.9 52.3C27.8 89.3 14.9 143 13.5 209.5c-1.4 66.5-3.1 191.1 117 224.9h.1l-.1 51.6s-.8 20.9 13 25.1c16.6 5.2 26.4-10.7 42.3-27.8 8.7-9.4 20.7-23.2 29.8-33.7 82.2 6.9 145.3-8.9 152.5-11.2 16.6-5.4 110.5-17.4 125.7-142 15.8-128.6-7.6-209.8-49.8-246.5zM457.9 287c-12.9 104-89 110.6-103 115.1-6 1.9-61.5 15.7-131.2 11.2 0 0-52 62.7-68.2 79-5.3 5.3-11.1 4.8-11-5.7 0-6.9.4-85.7.4-85.7-.1 0-.1 0 0 0-101.8-28.2-95.8-134.3-94.7-189.8 1.1-55.5 11.6-101 42.6-131.6 55.7-50.5 170.4-43 170.4-43 96.9.4 143.3 29.6 154.1 39.4 35.7 30.6 53.9 103.8 40.6 211.1zm-139-80.8c.4 8.6-12.5 9.2-12.9.6-1.1-22-11.4-32.7-32.6-33.9-8.6-.5-7.8-13.4.7-12.9 27.9 1.5 43.4 17.5 44.8 46.2zm20.3 11.3c1-42.4-25.5-75.6-75.8-79.3-8.5-.6-7.6-13.5.9-12.9 58 4.2 88.9 44.1 87.8 92.5-.1 8.6-13.1 8.2-12.9-.3zm47 13.4c.1 8.6-12.9 8.7-12.9.1-.6-81.5-54.9-125.9-120.8-126.4-8.5-.1-8.5-12.9 0-12.9 73.7.5 133 51.4 133.7 139.2zM374.9 329v.2c-10.8 19-31 40-51.8 33.3l-.2-.3c-21.1-5.9-70.8-31.5-102.2-56.5-16.2-12.8-31-27.9-42.4-42.4-10.3-12.9-20.7-28.2-30.8-46.6-21.3-38.5-26-55.7-26-55.7-6.7-20.8 14.2-41 33.3-51.8h.2c9.2-4.8 18-3.2 23.9 3.9 0 0 12.4 14.8 17.7 22.1 5 6.8 11.7 17.7 15.2 23.8 6.1 10.9 2.3 22-3.7 26.6l-12 9.6c-6.1 4.9-5.3 14-5.3 14s17.8 67.3 84.3 84.3c0 0 9.1.8 14-5.3l9.6-12c4.6-6 15.7-9.8 26.6-3.7 14.7 8.3 33.4 21.2 45.8 32.9 7 5.7 8.6 14.4 3.8 23.6z"></path></svg>
+                                </a>
+                                
+                                <a href="https://api.whatsapp.com/send?phone=<380977996825>" target="_blank"  class="contacts__icn">
+                                    <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M25.791 11.1258C17.6098 11.1258 10.959 17.7191 10.9478 25.8297C10.9478 28.6076 11.7355 31.3186 13.2209 33.6502L13.5698 34.208L12.0731 39.6299L17.6885 38.1685L18.2287 38.492C20.5019 39.8307 23.1127 40.5447 25.7797 40.5447H25.791C33.961 40.5447 40.7918 33.9514 40.7918 25.8409C40.7918 21.9139 39.0813 18.2212 36.2792 15.4433C33.4658 12.6542 29.7522 11.1258 25.791 11.1258ZM34.5124 32.1441C34.141 33.1816 32.363 34.1188 31.5077 34.2415C30.0898 34.4535 28.987 34.3419 26.1623 33.137C21.6947 31.2182 18.7689 26.7557 18.5438 26.4656C18.3187 26.1755 16.7207 24.067 16.7207 21.8916C16.7207 19.7161 17.8686 18.6451 18.285 18.1989C18.6901 17.7526 19.174 17.641 19.4778 17.641C19.7704 17.641 20.0743 17.641 20.3331 17.6522C20.6032 17.6634 20.9745 17.5518 21.3346 18.4108C21.706 19.2922 22.595 21.4676 22.7076 21.6907C22.8201 21.9139 22.8989 22.1705 22.7413 22.4605C21.8861 24.1563 20.9745 24.0893 21.4359 24.8703C23.1577 27.8044 24.8795 28.8196 27.5015 30.1248C27.9516 30.348 28.2105 30.3145 28.4693 30.0133C28.7281 29.7232 29.5834 28.7192 29.876 28.2841C30.1686 27.8378 30.4724 27.9159 30.8775 28.0609C31.2826 28.206 33.4771 29.277 33.9272 29.5001C34.3773 29.7232 34.6699 29.8348 34.7825 30.0133C34.8837 30.2253 34.8837 31.1177 34.5124 32.1441ZM45.597 0.995972H5.98501C3.00285 0.995972 0.583374 3.39456 0.583374 6.35095V45.6208C0.583374 48.5772 3.00285 50.9758 5.98501 50.9758H45.597C48.5791 50.9758 50.9986 48.5772 50.9986 45.6208V6.35095C50.9986 3.39456 48.5791 0.995972 45.597 0.995972ZM25.7797 43.5235C22.7863 43.5235 19.8492 42.776 17.2497 41.3703L7.78555 43.8358L10.3176 34.6654C8.75334 31.9879 7.93184 28.9423 7.93184 25.8185C7.9431 16.068 15.9443 8.13595 25.7797 8.13595C30.5512 8.13595 35.03 9.97672 38.406 13.3236C41.7708 16.6705 43.7964 21.1106 43.7964 25.8409C43.7964 35.5914 35.6152 43.5235 25.7797 43.5235Z" fill="#4F4F4F"/>
+                                        </svg>
+                                </a>
+                            </div>
+                            <div class="contacts__number-row">
+                                <a href="tel:+380977996825" class="contacts__number">
+                                    <svg width="18" height="28" viewBox="0 0 18 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14.9248 0H2.63379C1.17972 0 0 1.1539 0 2.57616V24.9028C0 26.3251 1.17972 27.479 2.63379 27.479H14.9248C16.3789 27.479 17.5586 26.3251 17.5586 24.9028V2.57616C17.5586 1.1539 16.3789 0 14.9248 0ZM8.77929 25.7616C7.80809 25.7616 7.02344 24.9941 7.02344 24.0441C7.02344 23.0942 7.80809 22.3267 8.77929 22.3267C9.7505 22.3267 10.5352 23.0942 10.5352 24.0441C10.5352 24.9941 9.7505 25.7616 8.77929 25.7616Z" fill="#4F4F4F"/>
+                                        </svg>
+                                        +38(097)799 68 25
+                                </a>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /contacts -->
+            <!-- insta-line -->
+            <div class="insta-line">
+                <div class="elfsight-app-1495c754-dc14-4167-b89e-c3c20c3c6eba"></div>
+            </div>
+            <!--// insta-line -->
+        </main>
+        <!--// main-->
+         <!-- footer -->
+         <footer>
+            <div class="container">
+                <div class="footer__row">
+                    <div class="footer__left-col">
+                        <div class="footer__left-col-title">
+                            <h4>Студия слепков Катерины Жук</h4>
+                        </div>
+                        <p>Обучение слепкам</p>
+                        <div class="footer__left-col-social-block">
+                            <h6>Я в социальных сетях:</h6>
+                            <div class="footer__left-col-social-icn">
+                                <a href="tg://resolve?domain=SLEPKI_MARIUPOL" target="_blank">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="telegram-plane" class="svg-inline--fa fa-telegram-plane fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"></path>
+                                    </svg>
+                                    <a href="https://instagram.com/slepki_mariupol?igshid=1jhj82hsc5m09" target="_blank">
+                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram-square" class="svg-inline--fa fa-instagram-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32ZM382.88,322c-1.29,25.63-7.14,48.34-25.85,67s-41.4,24.63-67,25.85c-26.41,1.49-105.59,1.49-132,0-25.63-1.29-48.26-7.15-67-25.85s-24.63-41.42-25.85-67c-1.49-26.42-1.49-105.61,0-132,1.29-25.63,7.07-48.34,25.85-67s41.47-24.56,67-25.78c26.41-1.49,105.59-1.49,132,0,25.63,1.29,48.33,7.15,67,25.85s24.63,41.42,25.85,67.05C384.37,216.44,384.37,295.56,382.88,322Z"></path></svg>
+                                    </a>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__right-col">
+
+                        <nav class="footer__nav">
+                            <div class="footer__nav-title">
+                                <h5>Навигация</h5>
+                                <ul class="footer__nav-list">
+                                    <li><a href="#order">Стоимость и заказ</a></li>
+                                    <li><a href="#portfolio">Мои работы</a></li>
+                                    <li><a href="#contacts">Контакты</a></li>   
+                                </ul>
+                            </div>
+                        </nav>
+                        
+    
+                        <div class="footer__contacts">
+                            <div class="footer__contacts-title">
+                               <h5>Контакты</h5> 
+                            </div>
+                            <div class="footer__contacts-icn">
+                                <a href="https://instagram.com/slepki_mariupol?igshid=1jhj82hsc5m09" target="_blank">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram-square" class="svg-inline--fa fa-instagram-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32ZM382.88,322c-1.29,25.63-7.14,48.34-25.85,67s-41.4,24.63-67,25.85c-26.41,1.49-105.59,1.49-132,0-25.63-1.29-48.26-7.15-67-25.85s-24.63-41.42-25.85-67c-1.49-26.42-1.49-105.61,0-132,1.29-25.63,7.07-48.34,25.85-67s41.47-24.56,67-25.78c26.41-1.49,105.59-1.49,132,0,25.63,1.29,48.33,7.15,67,25.85s24.63,41.42,25.85,67.05C384.37,216.44,384.37,295.56,382.88,322Z">
+                                    </path></svg>
+                                </a>
+                                <a href="https://api.whatsapp.com/send?phone=<380977996825>" target="_blank">
+                                    <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M25.791 11.1258C17.6098 11.1258 10.959 17.7191 10.9478 25.8297C10.9478 28.6076 11.7355 31.3186 13.2209 33.6502L13.5698 34.208L12.0731 39.6299L17.6885 38.1685L18.2287 38.492C20.5019 39.8307 23.1127 40.5447 25.7797 40.5447H25.791C33.961 40.5447 40.7918 33.9514 40.7918 25.8409C40.7918 21.9139 39.0813 18.2212 36.2792 15.4433C33.4658 12.6542 29.7522 11.1258 25.791 11.1258ZM34.5124 32.1441C34.141 33.1816 32.363 34.1188 31.5077 34.2415C30.0898 34.4535 28.987 34.3419 26.1623 33.137C21.6947 31.2182 18.7689 26.7557 18.5438 26.4656C18.3187 26.1755 16.7207 24.067 16.7207 21.8916C16.7207 19.7161 17.8686 18.6451 18.285 18.1989C18.6901 17.7526 19.174 17.641 19.4778 17.641C19.7704 17.641 20.0743 17.641 20.3331 17.6522C20.6032 17.6634 20.9745 17.5518 21.3346 18.4108C21.706 19.2922 22.595 21.4676 22.7076 21.6907C22.8201 21.9139 22.8989 22.1705 22.7413 22.4605C21.8861 24.1563 20.9745 24.0893 21.4359 24.8703C23.1577 27.8044 24.8795 28.8196 27.5015 30.1248C27.9516 30.348 28.2105 30.3145 28.4693 30.0133C28.7281 29.7232 29.5834 28.7192 29.876 28.2841C30.1686 27.8378 30.4724 27.9159 30.8775 28.0609C31.2826 28.206 33.4771 29.277 33.9272 29.5001C34.3773 29.7232 34.6699 29.8348 34.7825 30.0133C34.8837 30.2253 34.8837 31.1177 34.5124 32.1441ZM45.597 0.995972H5.98501C3.00285 0.995972 0.583374 3.39456 0.583374 6.35095V45.6208C0.583374 48.5772 3.00285 50.9758 5.98501 50.9758H45.597C48.5791 50.9758 50.9986 48.5772 50.9986 45.6208V6.35095C50.9986 3.39456 48.5791 0.995972 45.597 0.995972ZM25.7797 43.5235C22.7863 43.5235 19.8492 42.776 17.2497 41.3703L7.78555 43.8358L10.3176 34.6654C8.75334 31.9879 7.93184 28.9423 7.93184 25.8185C7.9431 16.068 15.9443 8.13595 25.7797 8.13595C30.5512 8.13595 35.03 9.97672 38.406 13.3236C41.7708 16.6705 43.7964 21.1106 43.7964 25.8409C43.7964 35.5914 35.6152 43.5235 25.7797 43.5235Z" fill="#4F4F4F"/>
+                                        </svg>
+                                </a>
+                                <a href="tg://resolve?domain=SLEPKI_MARIUPOL" target="_blank">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="telegram-plane" class="svg-inline--fa fa-telegram-plane fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"></path></svg>
+                                </a>
+                                <a href="viber://chat?number=%2B380977996825" target="_blank">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="viber" class="svg-inline--fa fa-viber fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M444 49.9C431.3 38.2 379.9.9 265.3.4c0 0-135.1-8.1-200.9 52.3C27.8 89.3 14.9 143 13.5 209.5c-1.4 66.5-3.1 191.1 117 224.9h.1l-.1 51.6s-.8 20.9 13 25.1c16.6 5.2 26.4-10.7 42.3-27.8 8.7-9.4 20.7-23.2 29.8-33.7 82.2 6.9 145.3-8.9 152.5-11.2 16.6-5.4 110.5-17.4 125.7-142 15.8-128.6-7.6-209.8-49.8-246.5zM457.9 287c-12.9 104-89 110.6-103 115.1-6 1.9-61.5 15.7-131.2 11.2 0 0-52 62.7-68.2 79-5.3 5.3-11.1 4.8-11-5.7 0-6.9.4-85.7.4-85.7-.1 0-.1 0 0 0-101.8-28.2-95.8-134.3-94.7-189.8 1.1-55.5 11.6-101 42.6-131.6 55.7-50.5 170.4-43 170.4-43 96.9.4 143.3 29.6 154.1 39.4 35.7 30.6 53.9 103.8 40.6 211.1zm-139-80.8c.4 8.6-12.5 9.2-12.9.6-1.1-22-11.4-32.7-32.6-33.9-8.6-.5-7.8-13.4.7-12.9 27.9 1.5 43.4 17.5 44.8 46.2zm20.3 11.3c1-42.4-25.5-75.6-75.8-79.3-8.5-.6-7.6-13.5.9-12.9 58 4.2 88.9 44.1 87.8 92.5-.1 8.6-13.1 8.2-12.9-.3zm47 13.4c.1 8.6-12.9 8.7-12.9.1-.6-81.5-54.9-125.9-120.8-126.4-8.5-.1-8.5-12.9 0-12.9 73.7.5 133 51.4 133.7 139.2zM374.9 329v.2c-10.8 19-31 40-51.8 33.3l-.2-.3c-21.1-5.9-70.8-31.5-102.2-56.5-16.2-12.8-31-27.9-42.4-42.4-10.3-12.9-20.7-28.2-30.8-46.6-21.3-38.5-26-55.7-26-55.7-6.7-20.8 14.2-41 33.3-51.8h.2c9.2-4.8 18-3.2 23.9 3.9 0 0 12.4 14.8 17.7 22.1 5 6.8 11.7 17.7 15.2 23.8 6.1 10.9 2.3 22-3.7 26.6l-12 9.6c-6.1 4.9-5.3 14-5.3 14s17.8 67.3 84.3 84.3c0 0 9.1.8 14-5.3l9.6-12c4.6-6 15.7-9.8 26.6-3.7 14.7 8.3 33.4 21.2 45.8 32.9 7 5.7 8.6 14.4 3.8 23.6z"></path></svg>
+                                </a>
+                            </div>
+                            <div class="phon-nmber">
+                                <a href="tel:+380977996825">Телефон: +380977996825</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- //footer -->
+        <a href="#header" id="back-top">
+            <svg id="arrow-size"  aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-circle-up" class="svg-inline--fa fa-arrow-circle-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"></path></svg>
+        </a>
+        <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+        <script src="libs/jquery-3.0.0.min.js"></script>
+        <script src="libs/owl/owl.carousel.min.js"></script>
+        <script src="libs/fancybox/jquery.fancybox.min.js"></script>
+        <script src="js/script.min.js"></script>  
+    </body>
+</html>       
+
